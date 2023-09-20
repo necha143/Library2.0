@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Show</title>
+</head>
+<body>
+<p style="font-size: 25px" th:text="${'Имя: ' + person.getFIO()}">VALUE</p>
+<p style="font-size: 25px" th:text="${'Год рождения: ' + person.getYearOfBirth()}">VALUE</p>
+<p style="font-size: 25px" th:text="${'ID: ' + person.getId()}">VALUE</p>
+
+<div th:if="${books.isEmpty()}">
+    <p style="font-size: 20px">Человек пока не взял ни одной книги</p>
+    <hr/>
+</div>
+
+<div th:if="${!books.isEmpty()}">
+    <hr/>
+    <b style="font-size: 20px">Книги:</b>
+    <br/>
+    <table th:each="element : ${books}">
+        <tr th:text="${element.getName() + ', ' + element.getAuthor() + ', ' + element.getYear()}">book</tr>
+    </table>
+    <hr/>
+</div>
+
+<form th:method="GET" th:action="@{/people/{id}/edit(id=${person.getId()})}">
+    <input style="font-size: 20px" type="submit" value="Редактировать"/>
+</form>
+
+<br/>
+
+<form th:method="DELETE" th:action="@{/people/{id}(id=${person.getId()})}">
+    <input style="font-size: 20px" type="submit" value="Удалить"/>
+</form>
+
+<br/>
+
+<form th:method="GET" th:action="@{/main}">
+    <input style="font-size: 20px" type="submit" value="Вернуться на главную">
+</form>
+
+</body>
+</html>

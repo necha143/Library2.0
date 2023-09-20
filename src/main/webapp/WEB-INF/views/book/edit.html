@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Редактировать книгу</title>
+</head>
+<body>
+<b style="font-size: 30px">Редактирование книги</b>
+<br/> <br/>
+
+<form th:method="PATCH" th:action="@{/book/{id}(id=${book.getBookID()})}" th:object="${book}">
+    <label style="font-size: 25px" for="name">Введите название: </label>
+    <input style="font-size: 20px" type="text" th:field="*{name}" id="name"/>
+    <div style="color:red" th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Full Name Error</div>
+    <br/>
+    <label style="font-size: 25px" for="author">Введите автора: </label>
+    <input style="font-size: 20px" type="text" th:field="*{author}" id="author"/>
+    <div style="color:red" th:if="${#fields.hasErrors('author')}" th:errors="*{author}">Author Error</div>
+    <br/>
+    <label style="font-size: 25px" for="year">Введите год: </label>
+    <input style="font-size: 20px" type="text" th:field="*{year}" id="year"/>
+    <div style="color:red" th:if="${#fields.hasErrors('year')}" th:errors="*{year}">Year Error</div>
+    <br/>
+    <br/>
+    <input style="font-size: 20px" type="submit" value="Редактировать!"/>
+</form>
+
+<br/>
+
+<form th:method="GET" th:action="@{/main}">
+    <input style="font-size: 20px" type="submit" value="Вернуться на главную">
+</form>
+</body>
+</html>
