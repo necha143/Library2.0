@@ -4,6 +4,7 @@ import javax.persistence.*;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
+import java.util.Date;
 
 @Table(name = "Book")
 @Entity
@@ -27,9 +28,16 @@ public class Book {
     @Column(name = "year")
     private int year;
 
+    @Column(name = "taked_at")
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date takedAt;
+
     @ManyToOne
     @JoinColumn(name = "person_id", referencedColumnName = "id")
     private Person owner;
+
+    @Transient
+    private boolean isExpired;
 
     public Book() {
     }
@@ -79,6 +87,22 @@ public class Book {
 
     public void setOwner(Person owner) {
         this.owner = owner;
+    }
+
+    public Date getTakedAt() {
+        return takedAt;
+    }
+
+    public void setTakedAt(Date takedAt) {
+        this.takedAt = takedAt;
+    }
+
+    public boolean isExpired() {
+        return isExpired;
+    }
+
+    public void setExpired(boolean expired) {
+        isExpired = expired;
     }
 
     @Override

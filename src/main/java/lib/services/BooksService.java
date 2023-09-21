@@ -10,6 +10,8 @@ import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.beans.Transient;
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -61,6 +63,7 @@ public class BooksService {
     public void assign(int id, Person selectedPerson) {
         booksRepository.findById(id).ifPresent(
                 book -> {
+                    book.setTakedAt(new Date());
                     book.setOwner(selectedPerson);
                 }
         );
@@ -71,6 +74,7 @@ public class BooksService {
         booksRepository.findById(id).ifPresent(
                 book -> {
                     book.setOwner(null);
+                    book.setTakedAt(null);
                 });
     }
 
