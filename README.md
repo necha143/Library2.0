@@ -19,16 +19,19 @@
 
 ## Страницы web-приложения
 __Страница пользователя (/people/{id})__  
-![person](https://github.com/necha143/Library2.0/assets/113212609/074824e6-b91f-48c8-83e8-920c81542da6)
+![person](https://github.com/necha143/Library2.0/assets/113212609/25be4ba0-767b-4476-b314-25b95324a407)
+
 </br> </br> 
 __Страница поиска (/book/search)__  
-![search](https://github.com/necha143/Library2.0/assets/113212609/9d19a08e-4bd5-44d8-9e0e-d9af907fd92e)
+![search](https://github.com/necha143/Library2.0/assets/113212609/46916490-c08c-4be0-b102-78bf87f7df85)
+
 </br> </br> 
 __Страница книг после сортировки (/book?sort_by_year=true)__  
-![sort](https://github.com/necha143/Library2.0/assets/113212609/acf2d635-81cb-4d95-8e7f-403c6ac57541)
+![sort](https://github.com/necha143/Library2.0/assets/113212609/1f06ae9e-fd8a-4acf-b904-a7c5108988d9)
+
 </br> </br> 
 __Страница книг после пагинации (/book?page=0&books_per_page=1)__  
-![pagination](https://github.com/necha143/Library2.0/assets/113212609/1b12a365-a6a1-4e07-8a7d-474a34142700)
+![pagination](https://github.com/necha143/Library2.0/assets/113212609/5bb383cf-08c1-42e9-b51d-7ba13d565078)
 
 
 
