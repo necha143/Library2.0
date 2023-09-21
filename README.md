@@ -24,6 +24,7 @@ __Страница пользователя (/people/{id})__
 </br> </br> 
 __Страница поиска (/book/search)__  
 ![search](https://github.com/necha143/Library2.0/assets/113212609/46916490-c08c-4be0-b102-78bf87f7df85)
+![search2](https://github.com/necha143/Library2.0/assets/113212609/e09ba132-a9bf-4d95-ba25-f033aeb321ba)
 
 </br> </br> 
 __Страница книг после сортировки (/book?sort_by_year=true)__  
